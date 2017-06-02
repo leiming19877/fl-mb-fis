@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>个人中心</title>
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../../../css/zmd.css">
+		<link rel="stylesheet" href="../../../css/mui.min.css">
+		<link href="../css/my-profile.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">个人中心</h1>
+		</header>
+		<div id="user-info-detail" class="mui-content">
+			<div class="center-row">
+				<div class="mui-input-row">
+					<!--
+					<div class="label-l"><br/>头&nbsp;&nbsp;&nbsp;&nbsp;像</div>
+					<div class="label-r"><img src="../images/use_icon.png">
+						<!--<img src="http://img4.imgtn.bdimg.com/it/u=1432431551,985748249&fm=21&gp=0.jpg"/>--></div>
+				</div>
+				<div class="mui-input-row">
+					<label class="label-l">部&nbsp;&nbsp;&nbsp;&nbsp;门</label>
+					<label class="label-r" v-text="userInfoData.office.name"></label>
+				</div>
+				<div class="mui-input-row">
+					<label class="label-l">姓&nbsp;&nbsp;&nbsp;&nbsp;名</label>
+					<label class="label-r" v-text="userInfoData.name"></label>
+				</div>
+				<div class="mui-input-row">
+					<label class="label-l">用&nbsp;&nbsp;户&nbsp;&nbsp;名</label>
+					<label class="label-r" v-text="userInfoData.loginName"></label>
+				</div>
+				<div class="mui-input-row" @tap="openModifyPasswordWindow()">
+					<a class="mui-navigate-right">
+					<label class="label-l">密&nbsp;&nbsp;&nbsp;&nbsp;码</label>
+					<label class="label-r">********</label>
+					</a>
+				</div>
+				<div class="mui-input-row">
+					<label class="label-l">手机号</label>
+					<label class="label-r" v-text="userInfoData.mobile"></label>
+				</div>
+				<div class="mui-input-row">
+					<label class="label-l">邮&nbsp;&nbsp;&nbsp;&nbsp;箱</label>
+					<label class="label-r" v-text="userInfoData.email"></label>
+				</div>
+				<div class="mui-input-row">
+					<label class="label-l">版 本 号</label>
+					<label class="label-r" v-text="version"></label>
+				</div>
+				<!--<div class="mui-input-row">
+					<label class="label-l">级&nbsp;&nbsp;&nbsp;&nbsp;别</label>
+					<label class="label-r" v-cloak v-if="userInfoData.grade==0">董事长</label>
+					<label class="label-r" v-cloak v-if="userInfoData.grade==1">事业部责任人</label>
+					<label class="label-r" v-cloak v-if="userInfoData.grade==2">公司责任人</label>
+					<label class="label-r" v-cloak v-if="userInfoData.grade==3">部门责任人</label>
+					<label class="label-r" v-cloak v-if="userInfoData.grade==4">部门员工</label>
+				</div>
+				<div class="mui-input-row ">
+					<label class="label-l"><p>&nbsp;</p>组&nbsp;&nbsp;&nbsp;&nbsp;织</label>
+					<label class="label-r">
+							<p v-text="userInfoData.office.officeName"></p>
+							<p v-text="userInfoData.company.companyName"></p>
+							<p v-text="userInfoData.sysDep.depName"></p>
+						</label>
+				</div>
+				<div style="clear:both;margin-bottom: 5px;"></div>
+
+			</div>-->
+			<!--
+			<ul class="mui-table-view mui-table-view-chevron">
+				<li @tap="openAbout" class="mui-table-view-cell">
+					<a  href="javascript:void(0)" class="mui-navigate-right">关于CRM&nbsp;&nbsp;</a>
+				</li>
+			</ul>
+			-->
+			<button id="logout-btn" style="margin-bottom: 10px;" class="mui-btn mui-btn-block mui-btn-primary ">退出</button>
+		</div>
+	</body>
+	<script type="text/javascript" id="seajsnode" src="../../../js/seajs/sea-all.min.js"></script>
+	<script>
+		//加载主模板块
+		seajs.use("../js/my-profile.js", function() {
+
+		});
+	</script>
+
+</html>

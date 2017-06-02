@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html class="ui-page-login">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../../../css/mui.min.css">
+		<link href="../css/login.css" rel="stylesheet" />
+		
+	</head>
+
+	<body>
+		<!--<canvas id="canvas" class="canvas"></canvas>-->
+		<!--<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">登录</h1>
+		</header>-->
+		<div class="mui-content">
+			<form id='login-form' class="mui-input-group">
+			
+				<div class="mui-input-row">
+					<input id="account" type="number"
+						 placeholder="请输入手机号"
+						 class="mui-input-clear mui-input"
+						 />
+				</div>
+				<div class="mui-input-row mui-password">
+					<input id="password" type="password"
+						 placeholder="请输入密码"
+						 class="mui-input-password"  />
+					<span class="mui-icon mui-icon-eye"></span>
+				</div>
+			</form>
+			
+			<div class="mui-content-padded">
+				<!--<a id='forgetPassword' >忘记密码</a>-->
+				<button id='login' class="mui-btn mui-btn-block  mui-btn-green">登录</button>
+				<!--<div class="link-area"></div>-->
+			</div>
+			
+			<div id="message" class="mui-content-padded oauth-area">
+
+			</div>
+		</div>
+		<script type="text/javascript" id="seajsnode" src="../../../js/seajs/sea-all.min.js"></script>
+		<script>
+		  	//加载主模板块
+		    seajs.use("../js/login.js",function(){
+	          
+		    });
+		</script>
+	</body>
+
+</html>

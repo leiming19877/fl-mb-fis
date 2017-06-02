@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8" />
+		<title>首页</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../../../../css/mui.css">
+		<link rel="stylesheet" href="../../../../css/icons-extra.css" />
+		<link rel="stylesheet" href="../../../../css/zmd.css">
+		<link href="../css/index-stat.css" rel="stylesheet" />
+	</head>
+
+	<body >
+		<div id="index-stat">
+			<header class="mui-bar mui-bar-nav">
+				
+				<div class="zl_logo"><img src="../images/zt_crm_logob_2x.png"></div> 
+				<a  @tap="openRentCalculator"  class="mui-icon-extra mui-icon-extra-calc rent-calculator mui-pull-right">
+				</a>
+				
+			</header>
+			<div class="mui-content" >
+				<ul class="mui-table-view">
+					
+					<li class="mui-table-view-cell mui-media" @tap="openRentList">
+						<a class="mui-navigate-right" >
+							<img class="mui-media-object"  src="../images/icon_ai_Rentreceivable_on.svg" />
+							<span class="mui-media-body">
+								未到期应收租金
+							</span>
+							<span v-if="yszj > 0" class="mui-badge mui-badge-danger" v-text="yszj"></span>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media" @tap="openYqRentList">
+						<a class="mui-navigate-right" >
+							<img class="mui-media-object"  src="../images/icon_ai_Overduerent_on.svg" />
+							<span class="mui-media-body">
+								逾期租金
+							</span>
+							<span v-if="yqzj > 0" class="mui-badge mui-badge-danger" v-text="yqzj"></span>
+						</a>
+					</li>
+					<li class="mui-table-view-divider"></li>
+					<li class="mui-table-view-cell mui-media" @tap="openContractRemindList">
+						<a class="mui-navigate-right" >
+							<img class="mui-media-object" src="../images/icon_ai_contract_on.svg" />
+							<span class="mui-media-body">
+								合同结清提醒
+							</span>
+							<span v-if="htjq > 0" class="mui-badge mui-badge-danger" v-text="htjq"></span>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media" @tap="openRenewalRemindList">
+						<a class="mui-navigate-right" >
+							<img class="mui-media-object" src="../images/icon_ai_Insurancereminder_on.svg" />
+							<span class="mui-media-body">
+								续保提醒
+							</span>
+							<span v-if="xbtx > 0" class="mui-badge mui-badge-danger" v-text="xbtx"></span>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media" @tap="openCardRemindList">
+						<a class="mui-navigate-right" >
+							<img class="mui-media-object"  src="../images/icon_ai_Oninsurance_on.svg" />
+							<span class="mui-media-body">
+								上牌提醒
+							</span>
+							<span v-if="sptx > 0" class="mui-badge mui-badge-danger" v-text="sptx"></span>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media" @tap="openMortgageRemindList">
+						<a class="mui-navigate-right" >
+							<img class="mui-media-object" src="../images/icon_ai_mortgage_on.svg" />
+							<span class="mui-media-body">
+								抵押提醒
+							</span>
+							<span v-if="dytx > 0" class="mui-badge mui-badge-danger" v-text="dytx"></span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<script type="text/javascript" id="seajsnode" src="../../../../js/seajs/sea-all.min.js"></script>
+		<script>
+			//加载主模块
+			seajs.use("../js/index-stat.js", function() {});
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,12 @@
+.mui-title {height:58px; line-height: 58px; text-align:left;} 
+.mui-bar .mui-title{right: 40px;left: 40px;}
+.rent-calculator{padding: 22px 20px 8px 8px; font-size: 20px;}
+.mui-table-view .mui-media-object{vertical-align: middle;}
+.zl_logo img{ width: 46%;position: fixed; z-index:2; top:8px; left:9px;}
+.mui-bar-nav .mui-icon-extra-calc:before{ color:#007aff; border: 1px solid #007aff; border-radius:20px; padding: 2px;}
+.mui-bar-nav{height:58px; background: #ffffff;}
+.mui-table-view-cell:after,.mui-table-view:after,.mui-table-view-divider:before,.mui-table-view-divider:after{position: absolute;right: 0;bottom: 0;left:52px;height: 1px;content: '';-webkit-transform: scaleY(.5);transform: scaleY(.5);background-color: #ebebeb}
+@media  screen and (min-width: 640px) {
+  .zl_logo img{ width: 25%;position: fixed; z-index:2; top:5px; left:4px;}
+	
+}
