@@ -32,7 +32,7 @@ fis.match('*.js', {
   isMod: true
 });
 
-fis.match('/js/seajs/sea-all.min.js', {
+fis.match('/js/seajs/sea.js', {
   isMod: false
 });
 fis.match('/js/seajs/sea-all-debug.min.js', {
@@ -132,7 +132,7 @@ fis.match('*.js', {
   postpackager: fis.plugin('loader', {
     allInOne: {
       includeAsyncs: true,
-      ignore: ['/js/seajs/sea-all.min.js','/js/seajs/sea-all-debug.min.js']
+      ignore: ['/js/seajs/sea.js','/js/seajs/sea-all-debug.min.js']
     }
   })
 });
@@ -151,7 +151,7 @@ fis.media('prod')
     postpackager: fis.plugin('loader', {
       allInOne: {
         includeAsyncs: true,
-        ignore: ['/js/seajs/sea-all.min.js','/js/seajs/sea-all-debug.min.js']
+        ignore: ['/js/seajs/sea.js','/js/seajs/sea-all-debug.min.js']
       }
     })
   });
