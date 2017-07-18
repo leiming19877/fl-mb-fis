@@ -1,0 +1,30 @@
+{
+  "name": "vuex",
+  "version": "2.3.1",
+  "description": "state management for Vue.js",
+  "main": "dist/vuex.common.js",
+  "module": "dist/vuex.esm.js",
+  "unpkg": "dist/vuex.js",
+  "typings": "types/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "fis3 release -d ./dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vuejs/vuex.git"
+  },
+  "author": "Evan You",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vuejs/vuex/issues"
+  },
+  "homepage": "https://github.com/vuejs/vuex#readme",
+  "devDependencies": {
+    "fis3": "^3.4.33",
+    "fis3-hook-cmd": "^0.1.2",
+    "fis3-postpackager-loader": "^2.1.4"
+  }
+}
