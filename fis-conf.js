@@ -24,9 +24,7 @@ fis.config.set('settings.lint.jshint', {
     noempty : true,
     node : true
 });
-/*fis.match('css/*.css',{
-  packTo:'css/golabel.css'
-});*/
+
 fis.match('*.js', {
    lint: fis.plugin('jshint', {
 
@@ -37,16 +35,11 @@ fis.match('*.js', {
 fis.match('/js/seajs/sea-all.min.js', {
   isMod: false
 });
-fis.match('/js/seajs/sea-all.js', {
+fis.match('/js/seajs/sea-all-debug.min.js', {
   isMod: false
 });
-/*fis.match('*.{js,css}',{
-  useHash:true
-});*/
-fis.match("*.css",{
-   //release: '/dist/$0'
-   //domain:'http://127.0.0.1'
-});
+
+/*
 //通用模块id设置
 fis.match(/^\/js.*\/(.*?)([-\.].*)?\.js$/i, {
       id: '$1',
@@ -84,7 +77,7 @@ fis.match('/js/mui/mui.zoom.min.js', {
 fis.match('/js/ztree/jquery.ztree.all-3.5.26.min.js', {
       id: 'ztree',
       isMod: true
-});
+});*/
 fis.hook('cmd', {
   baseUrl: './js/',
 
@@ -127,54 +120,39 @@ fis.match('::packager', {
 });
 
 
+//fis.media('debug')
+fis.match('*.js', {
+  // 通过 uglify 压缩 js
+  // 记得先安装：
+  // npm install [-g] fis-optimizer-uglify-js
+  optimizer:null,
+  useHash: false
+})
+.match('::packager', {
+  postpackager: fis.plugin('loader', {
+    allInOne: {
+      includeAsyncs: true,
+      ignore: ['/js/seajs/sea-all.min.js','/js/seajs/sea-all-debug.min.js']
+    }
+  })
+});
+
 // 注意： fis 中的 sea.js 方案，不支持部分打包。
 // 所以不要去配置 packTo 了，运行时会报错的。
-fis
-  .media('prod')
-  .match('/static/**.js', {
-    // 通过 uglify 压缩 js
-    // 记得先安装：
-    // npm install [-g] fis-optimizer-uglify-js
-    optimizer: fis.plugin('uglify-js')
-  })
-  .match('::packager', {
-    postpackager: fis.plugin('loader', {
-      allInOne: {
-        includeAsyncs: true,
-        ignore: ['/static/sea.js']
-      }
-    })
-  });
-
-  fis
+fis.media('prod')
   .match('*.js', {
     // 通过 uglify 压缩 js
     // 记得先安装：
     // npm install [-g] fis-optimizer-uglify-js
-    //optimizer: fis.plugin('uglify-js')
+    optimizer: fis.plugin('uglify-js'),
+    useHash: true
   })
   .match('::packager', {
-    packager: fis.plugin('map', {
-      '/pkg/golabel.css': [
-        '/css/mui.css',
-        '/css/mui.icons-extra.css',
-        '/css/mui.dtpicker.css',
-        '/css/mui.listpicker.css',
-        '/css/mui.picker.css',
-        '/css/mui.poppicker.css',
-        '/css/zmd.css'
-      ]
-    }),
-    spriter: fis.plugin('csssprites'),
     postpackager: fis.plugin('loader', {
       allInOne: {
         includeAsyncs: true,
-        ignore: ['/js/**/*.js','*.css']
+        ignore: ['/js/seajs/sea-all.min.js','/js/seajs/sea-all-debug.min.js']
       }
-      //,resourceType:'cmd'
-      
     })
-  }).match('::package', {
-    
-})
+  });
 

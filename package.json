@@ -10,7 +10,8 @@
     "dist"
   ],
   "scripts": {
-    "dev": "fis3 release -d ./dist"
+    "dev": "fis3 release debug -d ./dist",
+    "prod": "fis3 release prod -d ./dist"
   },
   "repository": {
     "type": "git",
